@@ -1,5 +1,6 @@
 #include <iostream>
 #include "BankAccount.h"
+#include <iomanip>
 
 //#include <stdexcept>
 
@@ -10,6 +11,7 @@ BankAccount::BankAccount(const std::string &accHolder, const std::string &accNum
 }
 BankAccount::~BankAccount(){
     // cleanup of objects and resources that the object used
+    std::cout<<"\nBankAccount object deconstructed\n";
 }
 void BankAccount::deposit(double amount) {
     if (amount > 0) {
@@ -33,5 +35,6 @@ void BankAccount::display() {
     std::cout << std::endl;
     std::cout << "Client Name: " << m_accHolder << std::endl;
     std::cout << "Account Number: " << m_accNum << std::endl;
+    std::cout<<std::setprecision(2)<<std::fixed;
     std::cout << "Account Balance $" << m_balance << std::endl;
 }
